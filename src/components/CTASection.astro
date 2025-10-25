@@ -1,0 +1,166 @@
+---
+---
+
+<section id="cta" class="hero-cta">
+	<div class="container">
+		<div class="cta-content">
+			<h2 class="cta-title">Di adiós a los espías de internet</h2>
+			<p class="cta-subtitle">Ni grandes corporaciones ni gobiernos, esto es más independiente que...</p>
+			<div class="search-demo">
+				<input id="cta-search-input" type="text" placeholder="Prueba tu primera búsqueda..." class="search-input">
+				<button id="cta-search-button" class="search-button" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+			</div>
+			<p class="cta-note">No pierdas el tiempo creándote una cuenta, que aquí no lo necesitas</p>
+		</div>
+	</div>
+</section>
+
+<style>
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	@keyframes fluidGradient {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+
+	.hero-cta {
+		padding: 6rem 0;
+		text-align: center;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.hero-cta::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(-45deg, #ffffff, #f8f8f8, #ececec, #ffffff);
+		background-size: 400% 400%;
+		animation: fluidGradient 16s ease infinite;
+		z-index: -1;
+	}
+
+	.dark .hero-cta::before {
+		background: linear-gradient(-45deg, #000000, #080808, #131313, #000000);
+		background-size: 400% 400%;
+		animation: fluidGradient 16s ease infinite;
+	}
+
+	.cta-content {
+		max-width: 700px;
+		margin: 0 auto;
+		position: relative;
+		z-index: 1;
+	}
+
+	.cta-title {
+		font-size: 3rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.cta-subtitle {
+		font-size: 1.3rem;
+		color: var(--text-secondary);
+		margin-bottom: 3rem;
+	}
+
+	.search-demo {
+		display: flex;
+		gap: 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.search-input {
+		flex: 1;
+		padding: 1.2rem 1.5rem;
+		border: 2px solid var(--border);
+		border-radius: 50px;
+		background-color: var(--bg);
+		color: var(--text);
+		font-size: 1.1rem;
+		font-family: 'Ubuntu', sans-serif;
+		transition: all 0.3s ease;
+	}
+
+	.search-input:focus {
+		outline: none;
+		border-color: var(--text);
+	}
+
+	.search-button {
+		padding: 1.2rem 3rem;
+		background-color: var(--text);
+		color: var(--bg);
+		border: none;
+		border-radius: 50px;
+		font-size: 1.1rem;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		font-family: 'Ubuntu', sans-serif;
+	}
+
+	.search-button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+	}
+
+	.cta-note {
+		color: var(--text-secondary);
+		font-size: 0.95rem;
+	}
+
+	@media (max-width: 768px) {
+		.search-demo {
+			flex-direction: column;
+		}
+
+		.cta-title {
+			font-size: 2rem;
+		}
+	}
+</style>
+
+<script>
+	// Open search on Enter or button click. Encodes query and opens in new tab.
+		(function () {
+			const inputEl = document.getElementById('cta-search-input');
+			const buttonEl = document.getElementById('cta-search-button');
+			const input = inputEl instanceof HTMLInputElement ? inputEl : null;
+			const button = buttonEl instanceof HTMLButtonElement ? buttonEl : null;
+		const base = 'https://beta-start.inled.es/search?q=';
+
+			if (!input || !button) return;
+
+			function doSearch() {
+				const q = (input?.value || '').trim();
+				if (!q) return;
+				const url = base + encodeURIComponent(q);
+				window.open(url, '_blank', 'noopener');
+			}
+
+		input.addEventListener('keydown', (e) => {
+			if (e.key === 'Enter') {
+				doSearch();
+			}
+		});
+
+		button.addEventListener('click', () => {
+			doSearch();
+		});
+	})();
+</script>

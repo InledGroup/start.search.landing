@@ -1,0 +1,136 @@
+---
+---
+
+<section id="privacy" class="privacy-section">
+	<div class="container">
+		<div class="privacy-content">
+			<div class="privacy-text">
+				<h2>Más privado que cualquier otro</h2>
+				<p>No tenemos competidores: somos los más privados del planeta</p>
+				<ul class="privacy-list">
+					<li>No almacenamos tu historial de búsqueda</li>
+					<li>No creamos perfiles de usuario</li>
+					<li>No compartimos datos con terceros</li>
+					<li>No utilizamos cookies de rastreo</li>
+					<li>Código abierto público en Github</li>
+				</ul>
+			</div>
+			<div class="privacy-graphic">
+				<img src={import.meta.env.BASE_URL + "los.espiadores.de.interne.png"} alt="los espiadores" width="auto" height="400">
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	@keyframes fluidGradient {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+
+	.privacy-section {
+		padding: 6rem 0;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.privacy-section::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(-45deg, #f5f5f5, #eeeeee, #e0e0e0, #f5f5f5);
+		background-size: 400% 400%;
+		animation: fluidGradient 18s ease infinite;
+		z-index: -1;
+	}
+
+	.dark .privacy-section::before {
+		background: linear-gradient(-45deg, #0a0a0a, #151515, #1f1f1f, #0a0a0a);
+		background-size: 400% 400%;
+		animation: fluidGradient 18s ease infinite;
+	}
+
+	.privacy-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		align-items: center;
+		position: relative;
+		z-index: 1;
+	}
+
+	.privacy-text h2 {
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.privacy-list {
+		list-style: none;
+	}
+
+	.privacy-list li {
+		padding: 1rem 0;
+		padding-left: 2rem;
+		position: relative;
+		font-size: 1.1rem;
+		color: var(--text-secondary);
+	}
+
+	.privacy-list li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		font-weight: bold;
+		color: var(--text);
+	}
+
+	.privacy-graphic {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.graphic-box {
+		background-color: var(--bg);
+		border: 3px solid var(--text);
+		border-radius: 20px;
+		padding: 4rem 3rem;
+		text-align: center;
+	}
+
+	.graphic-text {
+		font-family: 'Orbitron', sans-serif;
+		font-size: 3rem;
+		font-weight: 900;
+		margin-bottom: 0.5rem;
+	}
+
+	.graphic-subtitle {
+		font-size: 1.2rem;
+		color: var(--text-secondary);
+		text-transform: uppercase;
+		letter-spacing: 0.2rem;
+	}
+
+	@media (max-width: 768px) {
+		.privacy-content {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

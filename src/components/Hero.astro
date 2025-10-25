@@ -1,0 +1,240 @@
+---
+---
+
+<section class="hero">
+	<div class="hero-background">
+		<div class="blob blob-1"></div>
+		<div class="blob blob-2"></div>
+		<div class="blob blob-3"></div>
+		<div class="blob blob-4"></div>
+	</div>
+	<div class="container">
+		<div class="hero-content">
+			<h1 class="hero-title">El Buscador Español que Respeta tu Privacidad</h1>
+			<p class="hero-subtitle">Búsqueda profunda pero sencilla como con Google. IA incorporada y privacidad máxima</p>
+			<div class="hero-buttons">
+				<a href="https://beta-start.inled.es" class="btn btn-primary">Prueba Start ahora</a>
+				<a href="#features" class="btn btn-secondary">Conocer más</a>
+			</div>
+			<div class="hero-badge">
+				<p> 100% privado •  Con IA •  Noticias integradas</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	@keyframes float1 {
+		0%, 100% {
+			transform: translate(0, 0) scale(1) rotate(0deg);
+		}
+		33% {
+			transform: translate(30%, -20%) scale(1.1) rotate(120deg);
+		}
+		66% {
+			transform: translate(-20%, 30%) scale(0.9) rotate(240deg);
+		}
+	}
+
+	@keyframes float2 {
+		0%, 100% {
+			transform: translate(0, 0) scale(1) rotate(0deg);
+		}
+		33% {
+			transform: translate(-30%, 25%) scale(0.95) rotate(-120deg);
+		}
+		66% {
+			transform: translate(25%, -30%) scale(1.05) rotate(-240deg);
+		}
+	}
+
+	@keyframes float3 {
+		0%, 100% {
+			transform: translate(0, 0) scale(1) rotate(0deg);
+		}
+		33% {
+			transform: translate(20%, 30%) scale(1.08) rotate(90deg);
+		}
+		66% {
+			transform: translate(-30%, -20%) scale(0.92) rotate(180deg);
+		}
+	}
+
+	@keyframes float4 {
+		0%, 100% {
+			transform: translate(0, 0) scale(1) rotate(0deg);
+		}
+		33% {
+			transform: translate(-25%, -25%) scale(0.88) rotate(-90deg);
+		}
+		66% {
+			transform: translate(35%, 20%) scale(1.12) rotate(-180deg);
+		}
+	}
+
+	.hero {
+		margin-top: 100px;
+		padding: 6rem 0;
+		text-align: center;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.hero-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: var(--bg);
+		z-index: 0;
+	}
+
+	.blob {
+		position: absolute;
+		border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+		opacity: 0.6;
+		filter: blur(40px);
+	}
+
+	.blob-1 {
+		width: 500px;
+		height: 500px;
+		top: -10%;
+		left: 10%;
+		background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+		animation: float1 20s ease-in-out infinite;
+	}
+
+	.blob-2 {
+		width: 400px;
+		height: 400px;
+		top: 20%;
+		right: 15%;
+		background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
+		animation: float2 25s ease-in-out infinite;
+	}
+
+	.blob-3 {
+		width: 450px;
+		height: 450px;
+		bottom: 10%;
+		left: 20%;
+		background: linear-gradient(135deg, #ececec 0%, #d8d8d8 100%);
+		animation: float3 22s ease-in-out infinite;
+	}
+
+	.blob-4 {
+		width: 350px;
+		height: 350px;
+		bottom: 20%;
+		right: 25%;
+		background: linear-gradient(135deg, #f8f8f8 0%, #e5e5e5 100%);
+		animation: float4 18s ease-in-out infinite;
+	}
+
+	.dark .blob-1 {
+		background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+	}
+
+	.dark .blob-2 {
+		background: linear-gradient(135deg, #0f0f0f 0%, #1f1f1f 100%);
+	}
+
+	.dark .blob-3 {
+		background: linear-gradient(135deg, #151515 0%, #252525 100%);
+	}
+
+	.dark .blob-4 {
+		background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+	}
+
+	.hero-content {
+		max-width: 800px;
+		margin: 0 auto;
+		position: relative;
+		z-index: 1;
+	}
+
+	.hero-title {
+		font-size: 3.5rem;
+		line-height: 1.2;
+		margin-bottom: 1.5rem;
+		background: linear-gradient(135deg, var(--text) 0%, var(--text-secondary) 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.hero-subtitle {
+		font-size: 1.5rem;
+		color: var(--text-secondary);
+		margin-bottom: 2.5rem;
+	}
+
+	.hero-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		margin-bottom: 2rem;
+	}
+
+	.btn {
+		padding: 1rem 2rem;
+		border-radius: 50px;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 1.1rem;
+		transition: all 0.3s ease;
+		display: inline-block;
+	}
+
+	.btn-primary {
+		background-color: var(--text);
+		color: var(--bg);
+		border: 2px solid var(--text);
+	}
+
+	.btn-primary:hover {
+		background-color: var(--bg);
+		color: var(--text);
+		transform: translateY(-2px);
+	}
+
+	.btn-secondary {
+		background-color: transparent;
+		color: var(--text);
+		border: 2px solid var(--text);
+	}
+
+	.btn-secondary:hover {
+		background-color: var(--text);
+		color: var(--bg);
+		transform: translateY(-2px);
+	}
+
+	.hero-badge p {
+		color: var(--text-secondary);
+		font-size: 1rem;
+	}
+
+	@media (max-width: 768px) {
+		.hero-title {
+			font-size: 2.5rem;
+		}
+
+		.hero-subtitle {
+			font-size: 1.2rem;
+		}
+
+		.hero-buttons {
+			flex-direction: column;
+		}
+	}
+</style>
